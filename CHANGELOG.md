@@ -1,5 +1,11 @@
 # @crxn307/api-sports
 
+## 1.2.2
+
+### Patch Changes
+
+- 3f501bf: Exposed FootballFixtureStatistics, FootballFixtureLineups and FootballFixturePlayersStatistics as standalone types; added optional events, lineups, statistics and players fields to FootballFixtureResponse
+
 ## 1.2.1
 
 ### Patch Changes
