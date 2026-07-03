@@ -95,6 +95,10 @@ export type FootballFixtureResponse = {
   teams: FootballFixtureTeams;
   goals: FootballFixtureGoals;
   score: FootballFixtureScore;
+  events?: FootballFixtureEvent[],
+  lineups?: FootballFixtureLineups[],
+  statistics?: FootballFixtureStatistics[],
+  players?: FootballFixturePlayersStatistics[],
 };
 
 export type GetFootballFixturesParams = {
@@ -156,12 +160,14 @@ export type FootballFixtureStatistic = {
   };
 }[keyof FootballFixtureStatisticsMap];
 
-export type FootballFixtureStatisticsResponse = {
+export type FootballFixtureStatistics = {
   team: { id: number; name: string; logo: string };
   statistics: FootballFixtureStatistic[];
   statistics_1h?: FootballFixtureStatistic[];
   statistics_2h?: FootballFixtureStatistic[];
 };
+
+export type FootballFixtureStatisticsResponse = FootballFixtureStatistics
 
 export type GetFootballFixtureStatisticsParams = {
   fixture: number;
@@ -219,13 +225,15 @@ export type FootballFixtureLineupTeam = {
   } | null;
 };
 
-export type FootballFixtureLineupResponse = {
+export type FootballFixtureLineups = {
   team: FootballFixtureLineupTeam;
   formation: string;
   startXI: { player: FootballFixtureLineupPlayer }[];
   substitutes: { player: FootballFixtureLineupPlayer }[];
   coach: { id: number; name: string; photo: string };
-};
+}
+
+export type FootballFixtureLineupResponse = FootballFixtureLineups;
 
 export type GetFootballFixtureLineupsParams = {
   fixture: number;
@@ -274,13 +282,15 @@ export type FootballFixturePlayerStatistics = {
   };
 };
 
-export type FootballFixturePlayersStatisticsResponse = {
+export type FootballFixturePlayersStatistics = {
   team: { id: number; name: string; logo: string; update: string };
   players: {
     player: Pick<FootballPlayer, "id" | "name" | "photo">;
     statistics: FootballFixturePlayerStatistics[];
   }[];
 };
+
+export type FootballFixturePlayersStatisticsResponse = FootballFixturePlayersStatistics;
 
 export type GetFootballFixturePlayersStatisticsParams = {
   fixture: number;
