@@ -5,7 +5,7 @@ TypeScript client for [API-SPORTS](https://api-sports.io). Fully typed, ESM-only
 ## Installation
 
 ```bash
-pnpm add api-sports
+pnpm add @crxn307/api-sports
 ```
 
 > Requires Node.js ≥ 18 (uses native `fetch`).
